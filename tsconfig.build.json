@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "./build/typescript",
+    "rootDir": "."
+  },
+  "include": [
+    "src/**/*.ts",
+    "tests/integration/**/*.ts"
+  ]
+}

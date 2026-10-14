@@ -1,0 +1,4 @@
+export type AZInputPhaseEvent =
+  | 'TOP_STATE_JUST_CREATED'
+  | 'NORMAL_INPUT_CYCLE'
+  | 'TOP_STATE_JUST_REMOVED'

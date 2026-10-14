@@ -1,0 +1,6 @@
+export type AZSymbolType =
+  | 'VARIABLE'
+  | 'IDENTIFIER'
+  | 'STRING_CONSTANT'
+  | 'INTEGER_CONSTANT'
+  | 'FLOAT_CONSTANT'

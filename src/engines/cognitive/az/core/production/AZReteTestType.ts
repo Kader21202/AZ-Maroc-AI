@@ -1,0 +1,20 @@
+export type AZReteTestKind =
+  | 'CONSTANT_RELATIONAL'
+  | 'VARIABLE_RELATIONAL'
+  | 'DISJUNCTION'
+  | 'ID_IS_GOAL'
+  | 'ID_IS_IMPASSE'
+  | 'UNARY_SMEM_LINK'
+  | 'UNARY_SMEM_LINK_NOT'
+
+export type AZReteRelationalType =
+  | 'EQUAL'
+  | 'NOT_EQUAL'
+  | 'LESS'
+  | 'GREATER'
+  | 'LESS_OR_EQUAL'
+  | 'GREATER_OR_EQUAL'
+  | 'SAME_TYPE'
+  | 'SMEM_LINK'
+  | 'SMEM_LINK_NOT'
+  | 'CONSTANT_MATCH'

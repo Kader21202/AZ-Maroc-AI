@@ -1,0 +1,20 @@
+export type AZProductionPreferenceType =
+  | 'ACCEPTABLE'
+  | 'REQUIRE'
+  | 'REJECT'
+  | 'PROHIBIT'
+  | 'RECONSIDER'
+  | 'UNARY_INDIFFERENT'
+  | 'UNARY_PARALLEL'
+  | 'BEST'
+  | 'WORST'
+  | 'BINARY_INDIFFERENT'
+  | 'BINARY_PARALLEL'
+  | 'BETTER'
+  | 'WORSE'
+  | 'NUMERIC_INDIFFERENT'
+
+export type AZProductionSupportType =
+  | 'UNKNOWN'
+  | 'O_SUPPORT'
+  | 'I_SUPPORT'
