@@ -26,6 +26,9 @@ import { AZSubstateGroundExtractor } from '../production/AZSubstateGroundExtract
 import { AZJustificationMaterializer } from '../production/AZJustificationMaterializer'
 import { AZJustificationInstantiationCreator } from '../production/AZJustificationInstantiationCreator'
 import { AZSubstateJustificationHandler } from '../production/AZSubstateJustificationHandler'
+import { AZCausalRuleGeneralizer } from '../learning/AZCausalRuleGeneralizer'
+import { AZExperientialLearningHandler } from '../learning/AZExperientialLearningHandler'
+import { AZJustificationLearningBridge } from '../learning/AZJustificationLearningBridge'
 import type { AZGoalIdentityRegistry } from '../state/AZGoalIdentityRegistry'
 import type { AZProductionInstaller } from '../production/AZProductionInstaller'
 import {
@@ -92,6 +95,8 @@ export interface AZElaborationRuntimeAssemblyDependencies {
 
   readonly productionInstaller?:
     AZProductionInstaller
+
+  readonly experientialLearningEnabled?: boolean
 }
 
 /**
@@ -164,7 +169,18 @@ export class AZElaborationRuntimeAssembly {
         identifierStateRegistry,
         rhsFunctionRegistry,
         undefined,
-        completedInstantiationHandler,
+        dependencies.experientialLearningEnabled === true &&
+        completedInstantiationHandler !== undefined &&
+        dependencies.productionInstaller !== undefined
+          ? new AZJustificationLearningBridge(
+              completedInstantiationHandler,
+              new AZExperientialLearningHandler(
+                new AZCausalRuleGeneralizer(symbolManager),
+                dependencies.productionInstaller,
+              ),
+              true,
+            )
+          : completedInstantiationHandler,
       )
 
     this.newPreferenceAsserter =
@@ -220,7 +236,3 @@ export class AZElaborationRuntimeAssembly {
       )
   }
 }
-
-
-
-
