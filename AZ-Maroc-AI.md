@@ -65,7 +65,6 @@ Le chantier RST-001 a étudié les architectures suivantes :
 - pipelines ;
 - systèmes multi-agents ;
 - ACT-R ;
-- Soar ;
 - Sigma ;
 - plateformes modernes d’OpenAI, Anthropic, Google et Microsoft.
 

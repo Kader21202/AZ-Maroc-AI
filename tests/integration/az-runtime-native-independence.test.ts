@@ -30,8 +30,8 @@ const isForbiddenLegacyPath =
       normalize(filePath).toLowerCase()
 
     return (
-      normalized.includes('/cognitive/soar/') ||
-      normalized.includes('/infrastructure/soar/')
+      normalized.includes('/legacy/') ||
+      normalized.includes('/external-engines/')
     )
   }
 
